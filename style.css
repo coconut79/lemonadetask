@@ -1,0 +1,304 @@
+/*
+Colors
+Blue: #3498db
+Green: #64c832
+Orange: #ff9600
+Red: #3498db
+Grey: #93a8a9
+*/
+
+.total-bank {
+    font-size: 14px;
+    margin-top: 20%;
+    position: absolute;
+}
+
+.nextround {
+    padding: 5px;
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #000000;
+    background: #ff9600;
+    border-radius: 10% !important;
+}
+
+.pi-calculator-wrapper {
+    padding-top: 30px;
+    border: 1px solid #93a8a9;
+    margin-bottom: 30px;
+}
+
+.content-wrapper {
+    display: block;
+    max-width: 500px;
+    margin: auto;
+}
+
+.pi-calculator-title .title {
+    color: #3498db;
+    font-size: 24px;
+    font-weight:700;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.roundtext {
+    color: #3498db;
+    font-size: 24px;
+    font-weight:700;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: -20px;
+}
+
+.location, .subtitle2 {
+    color: #3498db;
+    font-size: 18px;
+    font-weight:700;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: -20px;
+}
+
+.cont-variables label {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.label1, .label2, .label3, .label4 {
+    color:#222;
+    font-size: 16px;
+    float: right;
+}
+
+.cont-variables span {
+    float: right;
+}
+
+.cont-variables input {
+    border: 1px solid #222;
+    border-radius: 15% !important;
+}
+
+/* ====
+Range Slider
+================*/
+
+.rangeslider,
+.rangeslider__fill {
+    display:block;
+    border-radius:10px;
+}
+
+.rangeslider {
+	position:relative;
+    margin: 10px auto;
+}
+
+.rangeslider:after{
+    top:50%;
+    left:0;
+    right:0;
+    content:'';
+    width:100%;
+    height:5px;
+    margin-top:-2.5px;
+    border-radius:5px;
+    position:absolute;
+    background:#3498db;
+}
+
+.rangeslider--horizontal{
+    width:100%;
+    height:28px;
+}
+
+.rangeslider--vertical{
+    width:5px;
+    min-height:150px;
+    max-height:100%;
+}
+.rangeslider--disabled{
+    filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+    opacity:0.4;
+}
+
+.rangeslider__fill{
+    position:absolute;
+    background:#64c832;
+}
+.rangeslider--horizontal .rangeslider__fill{
+    top:0;
+    height:100%;
+}
+.rangeslider--vertical .rangeslider__fill{
+    bottom:0;
+    width:100%;
+}
+
+.rangeslider__handle{
+    top:50%;
+    width:28px;
+    height:28px;
+    cursor:pointer;
+    margin-top:-14px;
+    background:white;
+    position:absolute;
+    background:#64c832;
+    border: 3px solid #fff;
+    border-radius:50% !important;
+    display:inline-block;
+}
+.rangeslider__handle:active{
+    background:#64c832;
+}
+
+.rangeslider__fill,
+.rangeslider__handle{
+    z-index:1;
+}
+.rangeslider--horizontal .rangeslider__fill{
+    top:50%;
+    height:5px;
+    margin-top:-2.5px;
+}
+
+
+/* =====
+Calculate Settlement Button
+========*/
+#calculate-settlement {
+    display: block;
+    padding: 10px;
+    font-size: 22px;
+    margin: 20px auto 30px;
+    background: #ff9600;
+    border-radius: 15% !important;
+}
+
+#nextboton {
+    display: block;
+    padding: 10px;
+    font-size: 22px;
+    margin: 20px auto 30px;
+    background: #ff9600;
+    border-radius: 0% !important;
+    position:relative;
+}
+
+
+/* =====
+Calculate Settlement Result
+========*/
+#EstimateResult {
+    border-top: 2px solid #222;
+}
+
+#EstimateResult h4 {
+    font-weight: normal;
+    text-align: center;
+}
+
+#EstimateResult .worth-between {
+    font-size: 20px;
+}
+
+#EstimateResult label#sum {
+    color: #3498db;
+}
+
+#EstimateResult label#roundbank,
+#EstimateResult label#totalbank {
+    color: #3498db;
+}
+
+#EstimateResult label#feedback {
+    color: red;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+#EstimateResult label#low, 
+#EstimateResult label#high {
+    font-size: 24px;
+    color: #3498db;
+}
+
+.switch-field {
+    font-family: "Lucida Grande", Tahoma, Verdana, sans-serif;
+    padding: 40px;
+    overflow: hidden;
+    margin-left: 17%;
+    margin-top: -10%;
+  }
+  
+  .switch-title, .colour-title {
+    margin-bottom: 6px;
+  }
+  
+  .switch-field input, .colour-field input {
+      position: absolute !important;
+      clip: rect(0, 0, 0, 0);
+      height: 1px;
+      width: 1px;
+      border: 0;
+      overflow: hidden;
+  }
+  
+  .switch-field label, .colour-field label {
+    float: left;
+  }
+  
+  .switch-field label, .colour-field label {
+    display: inline-block;
+    width: 80px;
+    background-color: #e4e4e4;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 14px;
+    font-weight: normal;
+    text-align: center;
+    text-shadow: none;
+    padding: 6px 14px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition:    all 0.1s ease-in-out;
+    -ms-transition:     all 0.1s ease-in-out;
+    -o-transition:      all 0.1s ease-in-out;
+    transition:         all 0.1s ease-in-out;
+  }
+  
+  .switch-field label:hover, .colour-field label:hover {
+      cursor: pointer;
+  }
+  
+  .switch-field input:checked + label {
+    background-color: #A5DC86;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  
+  .switch-field label:first-of-type, .colour-field label:first-of-type {
+    border-radius: 4px 0 0 4px;
+  }
+  
+  .switch-field label:last-of-type, .colour-field label:last-of-type {
+    border-radius: 0 4px 4px 0;
+  }
+
+  .colour-field input:checked + label {
+    background-color: rgba(93, 151, 238, 0.603);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .colour-field {
+    font-family: "Lucida Grande", Tahoma, Verdana, sans-serif;
+    padding: 20px;
+    overflow: hidden;
+    margin-left: 29%;
+    margin-top: -10%;
+  }
+
+ 

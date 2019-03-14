@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Lemonade stand</title>
+
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+<link rel="stylesheet" href="style.css">
+  
+</head>
+
+<body>
+<form method="POST" action="process.php">
+    <input type="hidden" id="totalScore" name="totalScore" />
+    <div class="pi-calculator-wrapper col-md-12">  
+    <div class="content-wrapper">
+    <div class="pi-calculator-title">
+    <div class="title clearfix">Lemonade stand</div>
+        <br>
+    <div class="roundtext">Round
+        <label for="roundnumber" id="roundnumber" name="roundnumber"> 1</label></div>
+        <br>
+    <div class="location">Choose your location</div>
+
+    <div class="switch-field">
+        <input type="radio" id="switch_3_left" name="switch_3" value="yes" />
+            <label for="switch_3_left">Business</label>
+        <input type="radio" id="switch_3_center" name="switch_3" value="maybe"/>
+            <label for="switch_3_center">Stadium</label>
+        <input type="radio" id="switch_3_right" name="switch_3" value="no" />
+            <label for="switch_3_right">School</label>
+            <br>
+    </div>
+    <div class="subtitle2">Choose the colour of your lemonade</div><br>
+                <div class="colour-field">
+        <input type="radio" id="switch_4_pink" name="switch_4" value="yes" />
+            <label for="switch_4_pink">Pink</label>
+        <input type="radio" id="switch_4_green" name="switch_4" value="maybe" />
+            <label for="switch_4_green">Green</label>
+                </div>
+  
+
+    <div class="cont-variables" id="cont-variables">
+        <label for="active-ingredient">Sugar content (in g)</label>
+            <span class="label1"><input type="number" id="input1" min="0" max="20" step = "0.1"></input></span>
+            <input id="field1" name="field1" type="range" min="0" max="20" value="0" step = "0.1" data-rangeslider>
+        <label for="tablet-size">Lemon content (in g)</label>
+            <span class="label2"><input type="number" id="input2" min="0" max="20" step = "0.1"></input></span>
+            <input id="field2" name="field2" type="range" min="0" max="20" value="0" step = "0.1" data-rangeslider>
+        <label for="price">Price per cup</label>
+            <span class="label3">$<input type="number" id="input3" min="0" max="10" step = "0.1"></input></span>
+            <input id="field3" name="field3" type="range" min="0" max="10" value="0" step = "0.1" data-rangeslider>
+
+        <input type="button" id="nextboton" name="Button1" class="nextboton" value="Calculate my profit for this round" onclick="calculateProfits();" /> 
+    </div>
+    
+</div>
+    <div id="EstimateResult">
+    <div class="panel panel-group">
+    <div class="panel-body">
+        <br>
+        <h4>
+            This round:  <label for="roundbank" id="roundbank" name="roundbank"></label>
+        <br>
+            Total money in your bank:  <label for="totalbank" id="totalbank" name="totalbank"></label>
+        <br>
+            <label for="feedback" id="feedback" name="feedback"></label>
+        </h4>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div id="welcomeDiv"  class="answer_list" align = "center">
+        <input type="button" id="nextround" style="display: none" class="nextround" value="Next Round" onclick="showInputs();" /> 
+    </div>
+    <div id="FinishButton" style="display:none;" class="answer_list" align = "center">
+        <input type="submit" id="FinishButton" class="nextround" value="Finish" /> 
+    </div>
+    </div>
+    </form>
+  
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/rangeslider.js/2.3.0/rangeslider.js'></script>
+  <script  src="index.js"></script>
+</body>
+</html>
