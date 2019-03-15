@@ -129,15 +129,13 @@ function calculateProfits() {
         //Calculate colour penalties
         if (document.getElementById("switch_4_pink").checked) {
             ColorP1 = 20;
-            $("#EstimateResult").slideDown();
-            $('html, body').animate({scrollTop:($('#EstimateResult').offset().top)},1500);
         } else if (document.getElementById("switch_4_green").checked) {
             ColorP1 = 0;
-            $("#EstimateResult").slideDown();
-            $('html, body').animate({scrollTop:($('#EstimateResult').offset().top)},1500);
-        } else {
-            alert("Please select a colour")
         }
+        //Drops down the results
+        $("#EstimateResult").slideDown();
+        $('html, body').animate({scrollTop:($('#EstimateResult').offset().top)},1500);
+
         //Calculate total penalties
         SugarP1 = Math.abs(BusinessSugar - Sugar1)*BusinessSugarPenalty;
         LemonP1 = Math.abs(BusinessLemon - Lemon1)*BusinessLemonPenalty;
@@ -147,15 +145,13 @@ function calculateProfits() {
         //Calculate profits
         LemonadeProfit1 = BusinessDemand - Penalty1;
         
-        
         RoundBank = LemonadeProfit1;
         results.push(RoundBank);
+        RoundBank = RoundBank.toFixed(2);
 
+        //Sums total profits
         TotalBank = results.reduceRight(function(a,b){return a+b;});
         TotalBank = TotalBank.toFixed(2);
-
-        $('#roundbank').text("$"+RoundBank.toLocaleString());
-        $('#totalbank').text("$"+TotalBank.toLocaleString());
 
         //Displays output
         $('#roundbank').text("$"+RoundBank.toLocaleString());
@@ -163,19 +159,19 @@ function calculateProfits() {
 
         //Gets feedback 
 
-        if (Sugar1 < BusinessSugar) {
+        if (Sugar1 < 1.55) {
             ran1 = "Some of your customers told you that the lemonade is not sweet enough"
         } else {
             ran1 = "Some of your customers told you that the lemonade is too sweet."
         }
             
-        if (Lemon1 < BusinessLemon) {
+        if (Lemon1 < 7.55) {
             ran2 = "Some of your customers told you that the lemonade is not sour enough."
         } else {
             ran2 = "Some of your customers told you that the lemonade is too sour."
         }
 
-        if (Price1 < BusinessPrice) {
+        if (Price1 < 7.55) {
             ran3 = "You have too many customers demanding lemonade. The price may be too low."
         } else {
             ran3 = "You have too few customers demanding lemonade. The price may be too high."
@@ -192,15 +188,11 @@ function calculateProfits() {
     } else if(document.getElementById('switch_3_center').checked) {
         if (document.getElementById("switch_4_pink").checked) {
                 ColorP1 = 20;
-                $("#EstimateResult").slideDown();
-                $('html, body').animate({scrollTop:($('#EstimateResult').offset().top)},1500);
         } else if (document.getElementById("switch_4_green").checked) {
                 ColorP1 = 0;
-                $("#EstimateResult").slideDown();
-                $('html, body').animate({scrollTop:($('#EstimateResult').offset().top)},1500);
-        } else {
-            alert("Please select a colour")
         }
+        $("#EstimateResult").slideDown();
+        $('html, body').animate({scrollTop:($('#EstimateResult').offset().top)},1500);
 
         SugarP1 = Math.abs(StadiumSugar - Sugar1)*StadiumSugarPenalty;
         LemonP1 = Math.abs(StadiumLemon - Lemon1)*StadiumLemonPenalty;
@@ -211,6 +203,7 @@ function calculateProfits() {
         
         RoundBank = LemonadeProfit1;
         results.push(RoundBank);
+        RoundBank = RoundBank.toFixed(2);
 
         TotalBank = results.reduceRight(function(a,b){return a+b;});
         TotalBank = TotalBank.toFixed(2);
@@ -218,51 +211,32 @@ function calculateProfits() {
         $('#roundbank').text("$"+RoundBank.toLocaleString());
         $('#totalbank').text("$"+TotalBank.toLocaleString());
 
-        //Displays output
-        $('#roundbank').text("$"+RoundBank.toLocaleString());
-        $('#totalbank').text("$"+TotalBank.toLocaleString());
-
-        //Gets feedback 
-
-        if (Sugar1 < StadiumSugar) {
-            ran1 = "Some of your customers told you that the lemonade is not sweet enough"
+        //Gets feedback
+        if (Sugar1 < 5.55) {
+            $('#feedback').text("Some of your customers told you that the lemonade is not sweet enough.".toLocaleString());
         } else {
-            ran1 = "Some of your customers told you that the lemonade is too sweet."
-        }
-            
-        if (Lemon1 < StadiumLemon) {
-            ran2 = "Some of your customers told you that the lemonade is not sour enough."
-        } else {
-            ran2 = "Some of your customers told you that the lemonade is too sour."
+            $('#feedback').text("Some of your customers told you that the lemonade is too sweet.".toLocaleString());
         }
 
-        if (Price1 < StadiumPrice) {
-            ran3 = "You have too many customers demanding lemonade. The price may be too low."
+        if (Lemon1 < 5.55) {
+            $('#feedback').text("Some of your customers told you that the lemonade is not sour enough.".toLocaleString());
         } else {
-            ran3 = "You have too few customers demanding lemonade. The price may be too high."
+            $('#feedback').text("Some of your customers told you that the lemonade is too sour.".toLocaleString());
         }
 
-        randomArray = [];
-        randomArray.push(ran1);
-        randomArray.push(ran2);
-        randomArray.push(ran3);
-        randomOutput = randomArray[Math.floor(Math.random() * randomArray.length)];
-        $('#feedback').text(randomOutput.toLocaleString());
-
-
-
-    } else if(document.getElementById('switch_3_right').checked) {
+        if (Price1 < 7.55) {
+            $('#feedback').text("You have too many customers demanding lemonade. The price may be too low.".toLocaleString());
+        } else {
+            $('#feedback').text("You have too few customers demanding lemonade. The price may be too high.".toLocaleString());
+        }
+        } else if(document.getElementById('switch_3_right').checked) {
             if (document.getElementById("switch_4_green").checked) {
                 ColorP1 = 20;
-                $("#EstimateResult").slideDown();
-                $('html, body').animate({scrollTop:($('#EstimateResult').offset().top)},1500);
             } else if (document.getElementById("switch_4_pink").checked) {
                 ColorP1 = 0;
-                $("#EstimateResult").slideDown();
-                $('html, body').animate({scrollTop:($('#EstimateResult').offset().top)},1500);
-            } else {
-                alert("Please select a colour")
             }
+        $("#EstimateResult").slideDown();
+        $('html, body').animate({scrollTop:($('#EstimateResult').offset().top)},1500);
 
     
         SugarP1 = Math.abs(SchoolSugar - Sugar1)*SchoolSugarPenalty;
@@ -274,6 +248,7 @@ function calculateProfits() {
         
         RoundBank = LemonadeProfit1;
         results.push(RoundBank);
+        RoundBank = RoundBank.toFixed(2);
 
         TotalBank = results.reduceRight(function(a,b){return a+b;});
         TotalBank = TotalBank.toFixed(2);
@@ -283,19 +258,19 @@ function calculateProfits() {
         
         //Gets feedback 
 
-        if (Sugar1 < SchoolSugar) {
+        if (Sugar1 < 9.55) {
             ran1 = "Some of your customers told you that the lemonade is not sweet enough"
         } else {
             ran1 = "Some of your customers told you that the lemonade is too sweet."
         }
             
-        if (Lemon1 < SchoolLemon) {
+        if (Lemon1 < 1.55) {
             ran2 = "Some of your customers told you that the lemonade is not sour enough."
         } else {
             ran2 = "Some of your customers told you that the lemonade is too sour."
         }
 
-        if (Price1 < SchoolPrice) {
+        if (Price1 < 2.55) {
             ran3 = "You have too many customers demanding lemonade. The price may be too low."
         } else {
             ran3 = "You have too few customers demanding lemonade. The price may be too high."
@@ -307,20 +282,20 @@ function calculateProfits() {
         randomArray.push(ran3);
         randomOutput = randomArray[Math.floor(Math.random() * randomArray.length)];
         $('#feedback').text(randomOutput.toLocaleString());
-    } else {
-        alert("Please select a location");
-        return false;
+        } else {
+            alert("Please select a location");
+            return false;
         }  
 
-    if (results.length < 20) {
-        document.getElementById("nextround").style.display = "block";
-        document.getElementById("cont-variables").style.display = "none"; 
-        } else {
-        document.getElementById("totalScore").value = TotalBank;
-        document.getElementById("nextround").style.display = "none";
-        document.getElementById("cont-variables").style.display = "none"; 
-        document.getElementById("FinishButton").style.display = "block";   
-        }        
+        if (results.length < 20) {
+            document.getElementById("nextround").style.display = "block";
+            document.getElementById("cont-variables").style.display = "none"; 
+            } else {
+            document.getElementById("totalScore").value = TotalBank;
+            document.getElementById("nextround").style.display = "none";
+            document.getElementById("cont-variables").style.display = "none"; 
+            document.getElementById("FinishButton").style.display = "block";   
+            }        
 }
 
 function showInputs() {
@@ -332,3 +307,8 @@ function showInputs() {
         $('#roundnumber').text(var1.toLocaleString()); 
     }
 }
+
+function showSliders() {
+    $("#cont-variables").slideDown();
+    $('html, body').animate({scrollTop:($('#cont-variables').offset().top)},1500);
+} 
