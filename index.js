@@ -129,13 +129,16 @@ function calculateProfits() {
         //Calculate colour penalties
         if (document.getElementById("switch_4_pink").checked) {
             ColorP1 = 20;
+            $("#EstimateResult").slideDown();
+            $('html, body').animate({scrollTop:($('#EstimateResult').offset().top)},1500);
         } else if (document.getElementById("switch_4_green").checked) {
             ColorP1 = 0;
+            $("#EstimateResult").slideDown();
+            $('html, body').animate({scrollTop:($('#EstimateResult').offset().top)},1500);
+        } else {
+            alert("Please select a colour");
         }
-        //Drops down the results
-        $("#EstimateResult").slideDown();
-        $('html, body').animate({scrollTop:($('#EstimateResult').offset().top)},1500);
-
+ 
         //Calculate total penalties
         SugarP1 = Math.abs(BusinessSugar - Sugar1)*BusinessSugarPenalty;
         LemonP1 = Math.abs(BusinessLemon - Lemon1)*BusinessLemonPenalty;
@@ -188,11 +191,15 @@ function calculateProfits() {
     } else if(document.getElementById('switch_3_center').checked) {
         if (document.getElementById("switch_4_pink").checked) {
                 ColorP1 = 20;
+                $("#EstimateResult").slideDown();
+                $('html, body').animate({scrollTop:($('#EstimateResult').offset().top)},1500);
         } else if (document.getElementById("switch_4_green").checked) {
                 ColorP1 = 0;
+                $("#EstimateResult").slideDown();
+                $('html, body').animate({scrollTop:($('#EstimateResult').offset().top)},1500);
+        } else {
+            alert("Please select a colour");
         }
-        $("#EstimateResult").slideDown();
-        $('html, body').animate({scrollTop:($('#EstimateResult').offset().top)},1500);
 
         SugarP1 = Math.abs(StadiumSugar - Sugar1)*StadiumSugarPenalty;
         LemonP1 = Math.abs(StadiumLemon - Lemon1)*StadiumLemonPenalty;
@@ -232,11 +239,15 @@ function calculateProfits() {
         } else if(document.getElementById('switch_3_right').checked) {
             if (document.getElementById("switch_4_green").checked) {
                 ColorP1 = 20;
+                $("#EstimateResult").slideDown();
+                $('html, body').animate({scrollTop:($('#EstimateResult').offset().top)},1500);
             } else if (document.getElementById("switch_4_pink").checked) {
                 ColorP1 = 0;
+                $("#EstimateResult").slideDown();
+                $('html, body').animate({scrollTop:($('#EstimateResult').offset().top)},1500);
+            } else {
+                alert("Please select a colour");
             }
-        $("#EstimateResult").slideDown();
-        $('html, body').animate({scrollTop:($('#EstimateResult').offset().top)},1500);
 
     
         SugarP1 = Math.abs(SchoolSugar - Sugar1)*SchoolSugarPenalty;
